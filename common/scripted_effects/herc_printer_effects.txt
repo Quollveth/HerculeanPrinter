@@ -1,0 +1,22 @@
+herc_printer_create_herculean = {
+	create_fleet = {
+		name = "Precursor Herculean"
+		settings = {
+			spawn_debris = no
+			is_boss = yes
+		}
+		effect = {
+			set_owner = prevprev
+			create_ship = {
+				name = "Precursor Herculean"
+				random_existing_design = precursor_colossus
+			}
+			set_formation_scale = 10
+			set_location = {
+				target = event_target:latest_herc_printer
+				distance = 0
+				angle = 0
+			}
+		}
+	}
+}

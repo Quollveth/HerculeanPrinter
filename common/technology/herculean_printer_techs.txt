@@ -1,0 +1,185 @@
+tech_colossus_printer = {
+	cost = 5000000
+	tier = 6
+	area = engineering
+	category = { voidcraft }
+	prerequisites = {
+		tech_precursor_design
+		tech_precursor_colossus
+	}
+	weight = 10
+	is_rare = yes
+	
+	potential = {
+		NOT = {
+			is_country_type = fallen_empire		
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_COLOSSUS_PRINTER"
+			desc = "TECH_UNLOCK_COLOSSUS_PRINTER_DESC"
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+tech_colossus_printer_alpha = {
+	cost = 10000000
+	tier = 7
+	area = engineering
+	category = { voidcraft }
+	prerequisites = {
+		tech_precursor_design
+		tech_colossus_printer
+		tech_dark_matter_power_core_ae
+	}
+	weight = 10
+	is_rare = yes
+	
+	potential = {
+		NOT = {
+			is_country_type = fallen_empire		
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_COLOSSUS_PRINTER_ALPHA"
+			desc = "TECH_UNLOCK_COLOSSUS_PRINTER_ALPHA_DESC"
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+tech_colossus_printer_sigma = {
+	cost = 35000000
+	tier = 8
+	area = engineering
+	category = { voidcraft }
+	prerequisites = {
+		tech_precursor_design
+		tech_colossus_printer_alpha
+		tech_stellarite_reactor
+	}
+	weight = 10
+	is_rare = yes
+	
+	potential = {
+		NOT = {
+			is_country_type = fallen_empire		
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_COLOSSUS_PRINTER_SIGMA"
+			desc = "TECH_UNLOCK_COLOSSUS_PRINTER_SIMGA_DESC"
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+tech_colossus_printer_phanon = { #only avaible with AoT
+	cost = 100000000
+	tier = 8
+	area = engineering
+	category = { voidcraft }
+	prerequisites = {
+		tech_precursor_design
+		tech_colossus_printer_sigma
+		tech_precursor_phanon_design
+	}
+	weight = 10
+	is_rare = yes
+	
+	potential = {
+		has_global_flag = has_aot_mod #checks if AoT actually is enabled
+		NOT = {
+			is_country_type = fallen_empire		
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_COLOSSUS_PRINTER_PHANON"
+			desc = "TECH_UNLOCK_COLOSSUS_PRINTER_PHANON_DESC"
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+tech_colossus_printer_omega = {
+	cost = 500000000
+	tier = 8
+	area = engineering
+	category = { voidcraft }
+	prerequisites = {
+		tech_precursor_design
+		tech_colossus_printer_sigma
+		tech_lightmatter_reactor
+	}
+	weight = 10
+	is_rare = yes
+	
+	potential = {
+		NOT = {
+			is_country_type = fallen_empire		
+		}
+	}
+
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_COLOSSUS_PRINTER_OMEGA"
+			desc = "TECH_UNLOCK_COLOSSUS_PRINTER_OMEGA_DESC"
+		}
+	}
+	
+	ai_weight = {
+		factor = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}

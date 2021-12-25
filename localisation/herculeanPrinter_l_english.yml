@@ -1,0 +1,59 @@
+﻿l_english:
+
+pc_empty_space:0 "Empty Space"
+pc_empty_space_desc:0 "Where a star once shone brightly, now nothing remains but lost hopes and dreams and the faint smell of cheese"
+
+tech_colossus_printer:0 "Precursor Herculean Assembler"
+tech_colossus_printer_alpha:0 "Precursor Herculean Assembler Double Trouble"
+tech_colossus_printer_sigma:0 "Precursor Herculean Assembler Triple Threat"
+tech_colossus_printer_phanon:0 "Precursor Herculean Assembler Quad Carnage"
+tech_colossus_printer_omega:0 "Precursor Herculean Assembler Fuck You Edition"
+
+tech_colossus_printer_desc:0 "EIt was revealed to me in a dream!. A power so dank the precursor could never concieve of! A path to reach the zenith of our empire, beyond the fallen ones and anything they ever accomplished in their incompetence"
+tech_colossus_printer_alpha_desc:0 "Obviously a blue herculean assembler is stronger than a green one! That's just how basic logic works, catch up."
+tech_colossus_printer_sigma_desc:0 "At the pinnacle of the sigma grindset we find the true power"
+tech_colossus_printer_phanon_desc:0 "Herculean Assemblers! Now 300% more edgy!"
+tech_colossus_printer_omega_desc:0 "The Light of Stellar is a pathway to many abilities some consider to be... unbalanced"
+
+TECH_UNLOCK_COLOSSUS_PRINTER:0 "UNLOCKED HERCULEAN ASSEMBLERS"
+TECH_UNLOCK_COLOSSUS_PRINTER_DESC:0 "Who needs balance anyways?"
+TECH_UNLOCK_COLOSSUS_PRINTER_ALPHA:0 "BUNLOCKS ALPHA HERCULEAN ASSEMBLERS!"
+TECH_UNLOCK_COLOSSUS_PRINTER_ALPHA_DESC:0 "Alpha assemblers can print two herculeans at once"
+TECH_UNLOCK_COLOSSUS_PRINTER_SIGMA:0 "HUNLOCKS SIGMA HERCULEAN ASSEMBLERS!"
+TECH_UNLOCK_COLOSSUS_PRINTER_SIGMA_DESC:0 "Sigma assemblers can print three herculeans at once"
+TECH_UNLOCK_COLOSSUS_PRINTER_PHANON:0 "RUNLOCKS PHANON HERCULEAN ASSEMBLERS!"
+TECH_UNLOCK_COLOSSUS_PRINTER_PHANON_DESC:0 "Phanon herculean assemblers can print four herculeans at once"
+TECH_UNLOCK_COLOSSUS_PRINTER_OMEGA:0 "YUNLOCKS OMEGA HERCULEAN ASSEMBLERS!"
+TECH_UNLOCK_COLOSSUS_PRINTER_OMEGA_DESC:0 "Omega assemblers can print five herculeans at once, because why the fuck not"
+
+colossus_assembler_0:0 "Precursor Herculean Assembler Construction Site"
+colossus_assembler_0_DESC:0 "From the creator of systemcraft printer! Herculean printers! Now even more unbalanced!"
+colossus_assembler_0_MEGASTRUCTURE_DETAILS:0 "Builds a machine capable of easily and conveniently making Precursor Herculeans for all your unbalance needs. \n RDESTROYS ALL SYSTEM PLANETS!"
+
+colossus_assembler_1:0 "Precursor Herculean Assembler Technobable Arrays"
+colossus_assembler_1_DESC:0 "The big technobabble arrays shift the magneto-eletro-plasma into the subatomic drive to activate the baryonic stabilizers"
+
+colossus_assembler_2:0 "Precursor Herculean Assembler Bullshittium Core"
+colossus_assembler_2_DESC:0 "The huge bullshittium core generate the primary promethium flow to power the aft neutrino surge that allows to hyperquantic node to divert the isotopic FTL nodes"
+
+colossus_assembler_3:0 "Precursor Herculean Assembler Handwavium Generators"
+colossus_assembler_3_DESC:0 "The enormous havdwavium generators stabilize the argon-eletrical subplanks to divert the hypergluon flow to the gamma-quantum phaser"
+
+colossus_assembler_4:0  "Precursor Herculean Assembler Space Magic Plants"
+colossus_assembler_4_DESC:0 "The colossal space magic plants increase the avaible power for the platinum nanowave reversors so the chroniton impulser can stabilize the hyper-boron field containing the polar deltonium launchers"
+
+colossus_assembler_delta:0 "Precursor Herculean Assembler"
+colossus_assembler_delta_DESC:0 "Big precursor ship go brrrrr"
+
+colossus_assembler_alpha:0 "Precursor Herculean Assembler But Blue"
+colossus_assembler_alpha_DESC:0 "Press button to make die-mobile"
+
+colossus_assembler_sigma:0 "The Chad Precursor Herculean Assembler"
+colossus_assembler_sigma_DESC:0 "The pinnacle of the sigma grindset"
+
+colossus_assembler_phanon:0 "Precursor Herculean Assembler but Redgy!"
+colossus_assembler_phanon_DESC:0 "Now with 69420% more dank"
+
+colossus_assembler_omega:0 "Precursor Herculean Assembler - Fuck You Edition"
+colossus_assembler_omega_DESC:0 "Who needs balance?"
+

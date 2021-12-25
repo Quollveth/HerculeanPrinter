@@ -1,0 +1,859 @@
+@colossus_printer_stage_cost_alloys = 150000
+@colossus_printer_stage_cost_sr = 30000
+@colossus_printer_stage_cost_acot = 50000
+@colossus_printer_stage_cost_time = 3600
+@colossus_printer_upgrade_cost_sr = 100000
+
+@colossus_printer_delta_upkeep_ec = 50000
+@colossus_printer_delta_upkeep_sr = 15000
+
+@colossus_printer_alpha_upkeep_ec = 80000
+@colossus_printer_alpha_upkeep_sr = 25000
+
+@colossus_printer_simga_upkeep_ec = 100000
+@colossus_printer_sigma_upkeep_sr = 35000
+
+@colossus_printer_phanon_upkeep_ec = 500000
+@colossus_printer_phanon_upkeep_sr = 50000
+
+@colossus_printer_omega_upkeep_ec = 1000000
+@colossus_printer_omega_upkeep_sr = 100000
+
+@colossus_printing_cost_delta_alloy = 2500000
+@colossus_printing_cost_delta_sr = 250000
+@colossus_printing_cost_delta_time = 36000
+
+@colossus_printing_cost_alpha_alloy = 5000000
+@colossus_printing_cost_alpha_sr = 500000
+@colossus_printing_cost_alpha_time = 48000
+
+@colossus_printing_cost_sigma_alloy = 7500000
+@colossus_printing_cost_sigma_sr = 750000
+@colossus_printing_cost_sigma_time = 60000
+
+@colossus_printing_cost_phanon_alloy = 10000000
+@colossus_printing_cost_phanon_sr = 1000000
+@colossus_printing_cost_phanon_time = 72000
+
+@colossus_printing_cost_omega_alloy = 12500000
+@colossus_printing_cost_omega_sr = 1250000
+@colossus_printing_cost_omega_time = 84000
+
+colossus_assembler_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	prerequisites = {
+		tech_colossus_printer
+	}
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			influence = 500
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			from = { NOT = { has_country_flag = built_mega_shipyard_site } }
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_black_hole_neutron_star_pulsar"
+			NOT = {
+				is_star_class = sc_black_hole
+				is_star_class = sc_neutron_star
+				is_star_class = sc_pulsar
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_binary_trinary"
+			NOR = {
+				is_star_class = sc_binary_1
+				is_star_class = sc_binary_2
+				is_star_class = sc_binary_3
+				is_star_class = sc_binary_4
+				is_star_class = sc_binary_5
+				is_star_class = sc_binary_6
+				is_star_class = sc_binary_7
+				is_star_class = sc_binary_8
+				is_star_class = sc_binary_9
+				is_star_class = sc_binary_10
+				is_star_class = sc_trinary_1
+				is_star_class = sc_trinary_2
+				is_star_class = sc_trinary_3
+				is_star_class = sc_trinary_4
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 100		# Default = 100
+		# Do we want the production
+		# Is this system a good location?
+		modifier = {
+			factor = 0.75
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = {
+						is_same_value = from
+					}
+				}
+			}
+		}
+		# Do we lean towards this from federation/ethic/civic?
+		modifier = {
+			factor = 10
+			from = {
+				has_country_flag = pangalactic_defense_league
+			}
+		}
+		modifier = {
+			factor = 2
+			from = {
+				has_federation = yes
+				federation = {
+					has_federation_type = military_federation
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			from = {
+				has_ethic = ethic_fanatic_militarist
+			}
+		}
+		modifier = {
+			factor = 1.5
+			from = {
+				has_ethic = ethic_militarist
+			}
+		}
+		modifier = {
+			factor = 1.5
+			from = {
+				has_civic = civic_machine_terminator
+			}
+		}
+		modifier = {
+			factor = 5
+			from = {
+				has_civic = civic_fanatic_purifiers
+			}
+		}
+		modifier = {
+			factor = 5
+			from = {
+				has_civic = civic_hive_devouring_swarm
+			}
+		}
+		modifier = {
+			factor = 2
+			from = {
+				is_at_war = yes
+			}
+		}
+	}
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			country_event = {
+				id = herc_printer.101
+			}			# Notification
+		}
+		fromfrom.planet = {
+			if = {
+				limit = {
+					exists = orbital_station
+				}
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+			set_planet_flag = megastructure			# Vanilla uses to check if a megastrucure can be built here
+			set_planet_flag = has_megastructure			# Vanilla uses to check if an orbital station can be built here
+		}
+	}
+}
+
+colossus_assembler_1 = {
+	entity = "herc_printer_1_entity"
+	construction_entity = "herc_printer_1_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_0
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			rare_crystals = @colossus_printer_stage_cost_sr
+			volatile_motes = @colossus_printer_stage_cost_sr
+			exotic_gases = @colossus_printer_stage_cost_sr
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_stage_cost_acot
+		}
+		upkeep = {
+			energy = 5000
+			sr_dark_matter = 500
+			acot_sr_dark_energy = 500
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+
+		every_system_planet = {
+			limit = { is_star = no }
+			remove_planet = yes
+		}
+		set_asteroid_belt = {
+			radius = 0
+		}
+
+		every_system_planet = {
+			limit = { is_star = yes }
+			change_pc = pc_empty_space
+		}
+
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			country_event = {
+				id = herc_printer.102
+			}
+		}		# Notification
+	}
+}
+
+colossus_assembler_2 = {
+	entity = "herc_printer_2_entity"
+	construction_entity = "herc_printer_2_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_1
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			rare_crystals = @colossus_printer_stage_cost_sr
+			volatile_motes = @colossus_printer_stage_cost_sr
+			exotic_gases = @colossus_printer_stage_cost_sr
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_stage_cost_acot
+		}
+		upkeep = {
+			energy = 10000
+			sr_dark_matter = 1000
+			acot_sr_dark_energy = 1000
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			country_event = {
+				id = herc_printer.103
+			}
+		}		# Notification
+	}
+}
+
+colossus_assembler_3 = {
+	entity = "herc_printer_3_entity"
+	construction_entity = "herc_printer_3_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_2
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			rare_crystals = @colossus_printer_stage_cost_sr
+			volatile_motes = @colossus_printer_stage_cost_sr
+			exotic_gases = @colossus_printer_stage_cost_sr
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_stage_cost_acot
+		}
+		upkeep = {
+			energy = 10000
+			sr_dark_matter = 1000
+			acot_sr_dark_energy = 1000
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			country_event = {
+				id = herc_printer.104
+			}
+		}		# Notification
+	}
+}
+
+colossus_assembler_4 = {
+	entity = "herc_printer_4_entity"
+	construction_entity = "herc_printer_4_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_3
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			rare_crystals = @colossus_printer_stage_cost_sr
+			volatile_motes = @colossus_printer_stage_cost_sr
+			exotic_gases = @colossus_printer_stage_cost_sr
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_stage_cost_acot
+		}
+		upkeep = {
+			energy = 10000
+			sr_dark_matter = 1000
+			acot_sr_dark_energy = 1000
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			country_event = {
+				id = herc_printer.105
+			}
+		}		# Notification
+	}
+}
+
+colossus_assembler_delta = { # FINISHED DELTA
+	entity = "herc_printer_5_entity"
+	construction_entity = "herc_printer_5_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_4
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			rare_crystals = @colossus_printer_stage_cost_sr
+			volatile_motes = @colossus_printer_stage_cost_sr
+			exotic_gases = @colossus_printer_stage_cost_sr
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_stage_cost_acot
+		}
+		upkeep = {
+			energy = @colossus_printer_delta_upkeep_ec
+			sr_dark_matter = @colossus_printer_delta_upkeep_sr
+			acot_sr_dark_energy = @colossus_printer_delta_upkeep_sr
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			if = {  #This check and flag exists because after printing the structure is automatically upgraded back to this stage, the next stage sets the country flag and that stops the notification event from triggering every time
+				limit = {
+					NOT = {
+						has_country_flag = just_assembled_herculean
+					}
+				}
+				country_event = {
+					id = herc_printer.106
+				}				# Notification
+			}
+			else_if = {
+				limit = {
+					has_country_flag = just_assembled_herculean
+				}
+				remove_country_flag = just_assembled_herculean
+			}
+		}
+	}
+}
+
+colossus_assembler_delta_printing = {
+	entity = "herc_printer_printing_1_entity"
+	construction_entity = "herc_printer_printing_1_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_delta
+	}
+	prerequisites = {
+		tech_colossus_printer
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printing_cost_delta_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printing_cost_delta_alloy
+			sr_dark_matter = @colossus_printing_cost_delta_sr
+			acot_sr_dark_energy = @colossus_printing_cost_delta_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_delta_upkeep_ec
+			sr_dark_matter = @colossus_printer_delta_upkeep_sr
+			acot_sr_dark_energy = @colossus_printer_delta_upkeep_sr
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = herc_print
+		from = {
+			set_country_flag = just_assembled_herculean
+			country_event = {
+				id = herc_printer.1000
+			}
+		}
+	}
+}
+
+colossus_assembler_alpha = { # FINISHED alpha
+	entity = "herc_printer_6_entity"
+	construction_entity = "herc_printer_6_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_delta
+	}
+	prerequisites = {
+		tech_colossus_printer_alpha
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			sr_dark_matter = @colossus_printer_stage_cost_acot
+			acot_sr_dark_energy = @colossus_printer_upgrade_cost_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_alpha_upkeep_ec
+			sr_dark_matter = @colossus_printer_alpha_upkeep_sr
+			acot_sr_dark_energy = @colossus_printer_alpha_upkeep_sr
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			if = {  #This check and flag exists because after printing the structure is automatically upgraded back to this stage, the next stage sets the country flag and that stops the notification event from triggering every time
+				limit = {
+					NOT = {
+						has_country_flag = just_assembled_herculean
+					}
+				}
+				country_event = {
+					id = herc_printer.107
+				}				# Notification
+			}
+			else_if = {
+				limit = {
+					has_country_flag = just_assembled_herculean
+				}
+				remove_country_flag = just_assembled_herculean
+			}
+		}
+	}
+}
+
+colossus_assembler_alpha_printing = {
+	entity = "herc_printer_printing_2_entity"
+	construction_entity = "herc_printer_printing_2_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_alpha
+	}
+	prerequisites = {
+		tech_colossus_printer_alpha
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printing_cost_alpha_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printing_cost_alpha_alloy
+			sr_dark_matter = @colossus_printing_cost_alpha_sr
+			acot_sr_dark_energy = @colossus_printing_cost_alpha_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_alpha_upkeep_ec
+			sr_dark_matter = @colossus_printer_alpha_upkeep_sr
+			acot_sr_dark_energy = @colossus_printer_alpha_upkeep_sr
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = herc_print
+		from = {
+			set_country_flag = just_assembled_herculean
+			country_event = {
+				id = herc_printer.1001
+			}
+		}
+	}
+}
+
+colossus_assembler_sigma = { # FINISHED sigma
+	entity = "herc_printer_7_entity"
+	construction_entity = "herc_printer_7_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_alpha
+	}
+	prerequisites = {
+		tech_colossus_printer_sigma
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			acot_sr_stellarite = @colossus_printer_upgrade_cost_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_sigma_upkeep_ec
+			acot_sr_stellarite = @colossus_printer_sigma_upkeep_sr
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			if = {  #This check and flag exists because after printing the structure is automatically upgraded back to this stage, the next stage sets the country flag and that stops the notification event from triggering every time
+				limit = {
+					NOT = {
+						has_country_flag = just_assembled_herculean
+					}
+				}
+				country_event = {
+					id = herc_printer.108
+				}				# Notification
+			}
+			else_if = {
+				limit = {
+					has_country_flag = just_assembled_herculean
+				}
+				remove_country_flag = just_assembled_herculean
+			}
+		}
+	}
+}
+
+colossus_assembler_sigma_printing = {
+	entity = "herc_printer_printing_2_entity"
+	construction_entity = "herc_printer_printing_2_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_sigma
+	}
+	prerequisites = {
+		tech_colossus_printer_sigma
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printing_cost_sigma_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printing_cost_sigma_alloy
+			acot_sr_stellarite = @colossus_printing_cost_sigma_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_sigma_upkeep_ec
+			acot_sr_stellarite = @colossus_printer_sigma_upkeep_sr
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = herc_print
+		from = {
+			set_country_flag = just_assembled_herculean
+			country_event = {
+				id = herc_printer.1002
+			}
+		}
+	}
+}
+
+
+colossus_assembler_phanon = { # FINISHED phanon
+	entity = "herc_printer_7_entity"
+	construction_entity = "herc_printer_7_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_sigma
+	}
+	prerequisites = {
+		tech_colossus_printer_phanon
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			aot_sr_runic_power = @colossus_printer_upgrade_cost_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_phanon_upkeep_ec
+			aot_sr_runic_power = @colossus_printer_phanon_upkeep_sr
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			if = {  #This check and flag exists because after printing the structure is automatically upgraded back to this stage, the next stage sets the country flag and that stops the notification event from triggering every time
+				limit = {
+					NOT = {
+						has_country_flag = just_assembled_herculean
+					}
+				}
+				country_event = {
+					id = herc_printer.109
+				}				# Notification
+			}
+			else_if = {
+				limit = {
+					has_country_flag = just_assembled_herculean
+				}
+				remove_country_flag = just_assembled_herculean
+			}
+		}
+	}
+}
+
+colossus_assembler_phanon_printing = {
+	entity = "herc_printer_printing_2_entity"
+	construction_entity = "herc_printer_printing_2_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_phanon
+	}
+	prerequisites = {
+		tech_colossus_printer_phanon
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printing_cost_phanon_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printing_cost_phanon_alloy
+			aot_sr_runic_power = @colossus_printing_cost_phanon_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_phanon_upkeep_ec
+			aot_sr_runic_power = @colossus_printer_phanon_upkeep_sr
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = herc_print
+		from = {
+			set_country_flag = just_assembled_herculean
+			country_event = {
+				id = herc_printer.1003
+			}
+		}
+	}
+}
+
+
+colossus_assembler_omega = { # FINISHED phanon
+	entity = "herc_printer_7_entity"
+	construction_entity = "herc_printer_7_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_sigma
+		colossus_assembler_phanon
+	}
+	prerequisites = {
+		tech_colossus_printer_omega
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printer_stage_cost_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printer_stage_cost_alloys
+			acot_sr_light_matter = @colossus_printer_upgrade_cost_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_omega_upkeep_ec
+			acot_sr_light_matter = @colossus_printer_omega_upkeep_sr
+		}
+	}
+	ai_weight = {
+		factor = 10
+	}	# If we can build it, we will build it
+	on_build_complete = {
+		save_event_target_as = herc_printer_system
+		fromfrom.planet = {
+			save_event_target_as = herc_printer_planet
+		}
+		from = {
+			if = {  #This check and flag exists because after printing the structure is automatically upgraded back to this stage, the next stage sets the country flag and that stops the notification event from triggering every time
+				limit = {
+					NOT = {
+						has_country_flag = just_assembled_herculean
+					}
+				}
+				country_event = {
+					id = herc_printer.110
+				}				# Notification
+			}
+			else_if = {
+				limit = {
+					has_country_flag = just_assembled_herculean
+				}
+				remove_country_flag = just_assembled_herculean
+			}
+		}
+	}
+}
+
+colossus_assembler_omega_printing = {
+	entity = "herc_printer_printing_2_entity"
+	construction_entity = "herc_printer_printing_2_entity"
+	portrait = "GFX_acot_precursor_colossus_base_background"
+	upgrade_from = {
+		colossus_assembler_omega
+	}
+	prerequisites = {
+		tech_colossus_printer_omega
+	}
+	place_entity_on_planet_plane = no
+	build_time = @colossus_printing_cost_omega_time
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @colossus_printing_cost_omega_alloy
+			acot_sr_light_matter = @colossus_printing_cost_omega_sr
+		}
+		upkeep = {
+			energy = @colossus_printer_omega_upkeep_ec
+			acot_sr_light_matter = @colossus_printer_omega_upkeep_sr
+		}
+	}
+
+	on_build_complete = {
+		save_event_target_as = herc_print
+		from = {
+			set_country_flag = just_assembled_herculean
+			country_event = {
+				id = herc_printer.1004
+			}
+		}
+	}
+}

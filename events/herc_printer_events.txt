@@ -1,0 +1,243 @@
+namespace = herc_printer
+
+country_event = {
+	id = herc_printer.100
+	title = "herc_printer.100"
+	desc = "herc_printer.100_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.101
+	title = "herc_printer.101"
+	desc = "herc_printer.101_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.102
+	title = "herc_printer.102"
+	desc = "herc_printer.102_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.103
+	title = "herc_printer.103"
+	desc = "herc_printer.103_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.104
+	title = "herc_printer.104"
+	desc = "herc_printer.104_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.105
+	title = "herc_printer.105"
+	desc = "herc_printer.105_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+country_event = {
+	id = herc_printer.106
+	title = "herc_printer.106"
+	desc = "herc_printer.106_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+
+
+# PRINT 1
+country_event = {
+	id = herc_printer.1000
+	title = "herc_printer.1000"
+	desc = "herc_printer.1000_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+
+	immediate = {
+		random_owned_megastructure = {
+			limit = { is_megastructure_type = colossus_assembler_delta_printing
+				NOT = { has_megastructure_flag = already_printed_herc }
+			}
+			set_megastructure_flag = already_printed_herc
+			save_global_event_target_as = latest_herc_printer
+			planet = { save_global_event_target_as = herc_printer_location }
+			solar_system = {
+				spawn_megastructure = {
+					type = colossus_assembler_delta
+					planet = PREV.planet
+					owner = root
+				}
+			}
+			herc_printer_create_herculean = yes
+			remove_megastructure = this
+		}
+		option = {
+			name = "herc_printer.1000.a"
+		}
+	}
+}
+
+# PRINT 2
+country_event = {
+	id = herc_printer.1001
+	title = "herc_printer.1001"
+	desc = "herc_printer.1001_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+
+	immediate = {
+		random_owned_megastructure = {
+			limit = { is_megastructure_type = colossus_assembler_alpha_printing
+				NOT = { has_megastructure_flag = already_printed_herc }
+			}
+			set_megastructure_flag = already_printed_herc
+			save_global_event_target_as = latest_herc_printer
+			planet = { save_global_event_target_as = herc_location }
+			solar_system = {
+				spawn_megastructure = {
+					type = colossus_assembler_alpha
+					planet = PREV.planet
+					owner = root
+				}
+			}
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			remove_megastructure = this
+		}
+		option = {
+			name = "herc_printer.1000.a"
+		}
+	}
+}
+# PRINT 3
+country_event = {
+	id = herc_printer.1002
+	title = "herc_printer.1002"
+	desc = "herc_printer.1002_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+
+	immediate = {
+		random_owned_megastructure = {
+			limit = { is_megastructure_type = colossus_assembler_sigma_printing
+				NOT = { has_megastructure_flag = already_printed_herc }
+			}
+			set_megastructure_flag = already_printed_herc
+			save_global_event_target_as = latest_herc_printer
+			planet = { save_global_event_target_as = herc_location }
+			solar_system = {
+				spawn_megastructure = {
+					type = colossus_assembler_sigma
+					planet = PREV.planet
+					owner = root
+				}
+			}
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			remove_megastructure = this
+		}
+		option = {
+			name = "herc_printer.1000.a"
+		}
+	}
+}
+# PRINT 4
+country_event = {
+	id = herc_printer.1003
+	title = "herc_printer.1003"
+	desc = "herc_printer.1003_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+
+	immediate = {
+		random_owned_megastructure = {
+			limit = { is_megastructure_type = colossus_assembler_phanon_printing
+				NOT = { has_megastructure_flag = already_printed_herc }
+			}
+			set_megastructure_flag = already_printed_herc
+			save_global_event_target_as = latest_herc_printer
+			planet = { save_global_event_target_as = herc_location }
+			solar_system = {
+				spawn_megastructure = {
+					type = colossus_assembler_phanon
+					planet = PREV.planet
+					owner = root
+				}
+			}
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			remove_megastructure = this
+		}
+		option = {
+			name = "herc_printer.1000.a"
+		}
+	}
+}
+# PRINT 5
+country_event = {
+	id = herc_printer.1004
+	title = "herc_printer.1004"
+	desc = "herc_printer.1004_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+
+	immediate = {
+		random_owned_megastructure = {
+			limit = { is_megastructure_type = colossus_assembler_omega_printing
+				NOT = { has_megastructure_flag = already_printed_herc }
+			}
+			set_megastructure_flag = already_printed_herc
+			save_global_event_target_as = latest_herc_printer
+			planet = { save_global_event_target_as = herc_location }
+			solar_system = {
+				spawn_megastructure = {
+					type = colossus_assembler_omega
+					planet = PREV.planet
+					owner = root
+				}
+			}
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			herc_printer_create_herculean = yes
+			remove_megastructure = this
+		}
+		option = {
+			name = "herc_printer.1000.a"
+		}
+	}
+}
