@@ -64,6 +64,45 @@ country_event = {
 	location = event_target:herc_printer_system
 }
 
+country_event = {
+	id = herc_printer.107
+	title = "herc_printer.107"
+	desc = "herc_printer.107_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+
+country_event = {
+	id = herc_printer.108
+	title = "herc_printer.108"
+	desc = "herc_printer.108_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+
+country_event = {
+	id = herc_printer.109
+	title = "herc_printer.109"
+	desc = "herc_printer.109_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
+
+country_event = {
+	id = herc_printer.110
+	title = "herc_printer.110"
+	desc = "herc_printer.110_desc"
+	picture = GFX_acot_precursor_colossus_base_background
+	show_sound = event_mystery
+	is_triggered_only = yes	
+	location = event_target:herc_printer_system
+}
 
 # PRINT 1
 country_event = {

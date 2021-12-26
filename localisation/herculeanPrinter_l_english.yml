@@ -31,7 +31,7 @@ colossus_assembler_0_DESC:0 "From the creator of systemcraft printer! Herculean 
 colossus_assembler_0_MEGASTRUCTURE_DETAILS:0 "Builds a machine capable of easily and conveniently making Precursor Herculeans for all your unbalance needs. \n RDESTROYS ALL SYSTEM PLANETS!"
 
 colossus_assembler_1:0 "Precursor Herculean Assembler Technobable Arrays"
-colossus_assembler_1_DESC:0 "The big technobabble arrays shift the magneto-eletro-plasma into the subatomic drive to activate the baryonic stabilizers"
+colossus_assembler_1_DESC:0 "The big technobabble arrays shift the magneto-electro-plasma into the subatomic drive to activate the baryonic stabilizers"
 
 colossus_assembler_2:0 "Precursor Herculean Assembler Bullshittium Core"
 colossus_assembler_2_DESC:0 "The huge bullshittium core generate the primary promethium flow to power the aft neutrino surge that allows to hyperquantic node to divert the isotopic FTL nodes"
@@ -57,3 +57,48 @@ colossus_assembler_phanon_DESC:0 "Now with 69420% more dank"
 colossus_assembler_omega:0 "Precursor Herculean Assembler - Fuck You Edition"
 colossus_assembler_omega_DESC:0 "Who needs balance?"
 
+colossus_assembler_delta_printing:0 "Print a Herculean"
+colossus_assembler_delta_printing:0 "This assembler is printing a herculean"
+
+colossus_assembler_alpha_printing:0 "Assemble Two Herculeans"
+colossus_assembler_alpha_printing:0 "This assembler is assembling two herculeans"
+
+colossus_assembler_sigma_printing:0 "Construct Three Herculeans"
+colossus_assembler_sigma_printing:0 "This assembler is constructing three herculeans"
+
+colossus_assembler_phanon_printing:0 "Build Four Herculeasn"
+colossus_assembler_phanon_printing:0 "This assembler is building four herculeans"
+
+colossus_assembler_omega_printing:0 "Fabricate Five Herculeans"
+colossus_assembler_omega_printing:0 "This assembler is fabricating five herculeans"
+
+### EVENTS
+herc_printer.101:0 "Precursor Herculean Assembler Construction Site Built"
+herc_printer.101_desc:0 "We shall reach heights the precursors could never have concieved of, with the construction of a Precursor Herculean Assembler our zenith shall be eternal"
+
+herc_printer.102:0 "Precursor Herculean Assembler Technobable Arrays Finished"
+herc_printer.102_desc:0 "With the big technobabble arrays in place the the magneto-electro-plasma can be shifted into the subatomic drive to activate the baryonic stabilizers used on the Herculean"
+
+herc_printer.103:0 "Precursor Herculean Assembler Bullshittium Core Finished"
+herc_printer.103_desc:0 "The huge bullshittium core has been finished and can now generate the primary promethium flow used to power the aft neutrino surge so the hyperquantic node can divert the isotopic FTL nodes"
+
+herc_printer.104:0 "Precursor Herculean Assembler Handwavium Generators Finished"
+herc_printer.104_desc:0 "The construction of the enormous havdwavium generators has finished so the argon-eletrical subplanks can be stabilized allowing the hypergluon flow to be diverted to the gamma-quantum phaser"
+
+herc_printer.105:0 "Precursor Herculean Assembler Space Magic Plants Finished"
+herc_printer.105_desc:0 "The most important part of the structure has now been finished. This colossal space magic plants increase the avaible power for the platinum nanowave reversors so the chroniton impulser can stabilize the hyper-boron field containing the polar deltonium launchers"
+
+herc_printer.106:0 "Delta Precursor Herculean Assembler Finished"
+herc_printer.106_desc:0 "The precursor herculean assembler has finally been finished, a massive structure so dank it dwarfs anything the lame fallen ones could have ever concieved"
+
+herc_printer.107:0 "Alpha Precursor Herculean Assembler Finished"
+herc_printer.107_desc:0 "With the power of the Alpha reactor the new precursor herculean assembler is capable of assembling two herculeans at once"
+
+herc_printer.108:0 "Sigma Precursor Herculean Assembler Finished"
+herc_printer.108_desc:0 "Infused with stellarite energy the precursor herculean assembler is much more stable and can construct three herculeans simultaneously"
+
+herc_printer.109:0 "Phanon Precursor Herculean Assembler Finished"
+herc_printer.109_desc:0 "With the phanon runic energy infused in the bullshittium core the precursor herculean assembler is now 69420% more dank and can build four herculeans in parallel"
+
+herc_printer.110:0 "Omega Precursor Herculean Assembler Finished"
+herc_printer.110_desc:0 "The light of Stellar has touched this precursor herculean assembler elevating it to the true power of the Panada. \n It can now fabricate five herculeans concomitantly"
