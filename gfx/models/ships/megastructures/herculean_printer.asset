@@ -1,0 +1,288 @@
+@herc_priter_scale = 1.9
+
+#pieces
+entity = {
+	name = void_sphere_ring_entity
+	locator = {	name = "loc02" position = { 0 -10 0 } rotation = { 0 0 0 } }
+	attach = { loc01 = "pc_acot_enigmopolis_ring_entity" }
+	scale = 20
+}
+
+entity = {
+	name = void_sphere_ring_double_entity
+
+	locator = {	name = "loc01" position = { 0 10 0 } rotation = { 0 180 0 } }
+	locator = {	name = "loc02" position = { 0 -10 0 } rotation = { 0 0 0 } }
+	attach = { loc01 = "void_sphere_ring_entity" }
+	attach = { loc02 = "void_sphere_ring_entity" }
+}
+
+entity = {
+	name = precursor_juggernaut_pannel_entity
+	locator = {	name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc01 = "alpha_precursor_colossus_juggernaut_entity" }
+	scale = 0.95
+}
+
+entity = {
+	name = precursor_juggernaut_pannel_long_entity
+	locator = {	name = "loc01" position = { 0 0 80 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 -80 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 0 40 } rotation = { 0 0 0 } }
+	locator = {	name = "loc04" position = { 0 0 -40 } rotation = { 0 0 0 } }
+	attach = { loc01 = "precursor_juggernaut_pannel_entity" }
+	attach = { loc02 = "precursor_juggernaut_pannel_entity" }
+	attach = { loc03 = "precursor_juggernaut_pannel_entity" }
+	attach = { loc04 = "precursor_juggernaut_pannel_entity" }
+	scale = 0.5
+}
+
+entity = {
+	name = precursor_juggernaut_pannel_two_entity
+	locator = {	name = "loc01" position = { 0 0 160 } rotation = { 0 90 0 } }
+	locator = {	name = "loc02" position = { 0 0 -160 } rotation = { 0 90 0 } }
+
+	attach = { loc01 = "precursor_juggernaut_pannel_long_entity" }
+	attach = { loc02 = "precursor_juggernaut_pannel_long_entity" }
+}
+
+entity = {
+	name = precursor_juggernaut_pannel_four_entity
+	locator = {	name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 0 } rotation = { 90 0 } }
+
+	attach = { loc01 = "precursor_juggernaut_pannel_two_entity" }
+	attach = { loc02 = "precursor_juggernaut_pannel_two_entity" }
+}
+
+entity = {
+	name = precursor_juggernaut_pannel_eight_entity
+	locator = {	name = "loc01" position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 0 } rotation = { 45 0 } }
+
+	attach = { loc01 = "precursor_juggernaut_pannel_four_entity" }
+	attach = { loc02 = "precursor_juggernaut_pannel_four_entity" }
+}
+
+entity = {
+	name = void_sphere_ring_but_bigger_entity
+	locator = { name = "root" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { "root" = pc_acot_enigmopolis_ring_entity }
+	scale = 35
+}
+entity = {
+	name = void_sphere_ring_double_bigger_entity
+
+	locator = {	name = "loc01" position = { 0 0 0 } rotation = { 0 180 0 } }
+	locator = {	name = "loc02" position = { 0 0 0 } rotation = { 0 0 0 } }
+	attach = { loc01 = "void_sphere_ring_but_bigger_entity" }
+	attach = { loc02 = "void_sphere_ring_but_bigger_entity" }
+}
+entity = {
+	name = void_sphere_ring_double_bigger_rotated_entity
+
+	locator = {	name = "loc01" position = { 0 0 0 } rotation = { 0 0 45 } }
+	locator = {	name = "loc02" position = { 0 0 0 } rotation = { 0 0 -45 } }
+	attach = { loc01 = "void_sphere_ring_double_bigger_entity" }
+	attach = { loc02 = "void_sphere_ring_double_bigger_entity" }
+}
+
+#actual printer
+
+entity = {
+	name = herc_printer_1_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+
+	scale = @herc_priter_scale
+}
+entity = {
+	name = herc_printer_2_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+	attach = { loc02 = "void_sphere_ring_double_entity" }
+
+	scale = @herc_priter_scale
+}
+entity = {
+	name = herc_printer_3_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+	attach = { loc02 = "void_sphere_ring_double_entity" }
+	attach = { loc03 = "precursor_juggernaut_pannel_eight_entity" }
+
+	scale = @herc_priter_scale
+}
+entity = {
+	name = herc_printer_4_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { root = "void_sphere_ring_double_bigger_rotated_entity" }
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+	attach = { loc02 = "void_sphere_ring_double_entity" }
+	attach = { loc03 = "precursor_juggernaut_pannel_eight_entity" }
+
+	scale = @herc_priter_scale
+}
+entity = {
+	name = herc_printer_5_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { root = "void_sphere_ring_double_bigger_rotated_entity" }
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+	attach = { loc02 = "void_sphere_ring_double_entity" }
+	attach = { loc03 = "precursor_juggernaut_pannel_eight_entity" }
+
+	scale = @herc_priter_scale
+}
+entity = {
+	name = herc_printer_printing_1_entity
+	cull_radius = 1000
+	
+	locator = {	name = "root" position = { 0 0 0 } }
+
+	locator = {	name = "loc01" position = { 0 80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 -80 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc03" position = { 0 8 0 } }
+
+	attach = { root = "precursor_colossus_ship_entity" }
+	attach = { root = "void_sphere_ring_double_bigger_rotated_entity" }
+	attach = { loc01 = "void_sphere_ring_double_entity" }
+	attach = { loc02 = "void_sphere_ring_double_entity" }
+	attach = { loc03 = "precursor_juggernaut_pannel_eight_entity" }
+
+	scale = @herc_priter_scale
+}
+
+#alpha
+entity = {
+	name = herc_printer_6_entity
+	cull_radius = 1000
+
+	locator = {	name = "loc01" position = { 340 0 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { -340 0 0 } }
+
+	attach = { loc01 = "herc_printer_5_entity" }
+	attach = { loc02 = "herc_printer_5_entity" }
+}
+
+entity = {
+	name = herc_printer_printing_2_entity
+	cull_radius = 1000
+
+	locator = {	name = "loc01" position = { 340 0 0 } }
+	locator = {	name = "loc02" position = { -340 0 0 } }
+
+	attach = { loc01 = "herc_printer_printing_1_entity" }
+	attach = { loc02 = "herc_printer_printing_1_entity" }
+}
+
+#sigma
+entity = {
+	name = herc_printer_7_entity
+	cull_radius = 1000
+
+	locator = {	name = "loc01" position = { 340 0 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { -340 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 0 800 } rotation = { 0 0 0 } }
+
+	attach = { loc01 = "herc_printer_5_entity" }
+	attach = { loc02 = "herc_printer_5_entity" }
+	attach = { loc03 = "herc_printer_5_entity" }
+}
+
+entity = {
+	name = herc_printer_printing_3_entity
+	cull_radius = 1000
+
+	locator = {	name = "loc01" position = { 340 0 0 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { -340 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "loc03" position = { 0 0 800 } rotation = { 0 0 0 } }
+
+	attach = { loc01 = "herc_printer_printing_1_entity" }
+	attach = { loc02 = "herc_printer_printing_1_entity" }
+	attach = { loc03 = "herc_printer_printing_1_entity" }
+}
+
+#phanon
+entity = {
+	name = herc_printer_8_entity
+	cull_radius = 1000
+	
+	locator = {	name = "loc01" position = { 0 0 400 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 -400 } }
+
+	attach = { loc01 = "herc_printer_6_entity" }
+	attach = { loc02 = "herc_printer_6_entity" }
+}
+
+entity = {
+	name = herc_printer_printing_4_entity
+	cull_radius = 1000
+	
+	locator = {	name = "loc01" position = { 0 0 350 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 -350 } }
+
+	attach = { loc01 = "herc_printer_printing_2_entity" }
+	attach = { loc02 = "herc_printer_printing_2_entity" }
+}
+
+#omega
+entity = {
+	name = herc_printer_9_entity
+	cull_radius = 1000
+	
+	locator = {	name = "loc01" position = { 0 0 800 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 -800 } }
+	locator = { name = "loc03" position = { 0 0 0 } }
+
+	attach = { loc01 = "herc_printer_6_entity" }
+	attach = { loc02 = "herc_printer_6_entity" }
+	attach = { loc03 = "herc_printer_5_entity" }
+}
+
+entity = {
+	name = herc_printer_printing_5_entity
+	cull_radius = 1000
+	
+	locator = {	name = "loc01" position = { 0 0 800 } rotation = { 0 0 0 } }
+	locator = {	name = "loc02" position = { 0 0 -800 } }
+	locator = { name = "loc03" position = { 0 0 0 } }
+
+	attach = { loc01 = "herc_printer_printing_2_entity" }
+	attach = { loc02 = "herc_printer_printing_2_entity" }
+	attach = { loc03 = "herc_printer_printing_1_entity" }
+}

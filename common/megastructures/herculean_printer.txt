@@ -647,8 +647,8 @@ colossus_assembler_sigma = { # FINISHED sigma
 }
 
 colossus_assembler_sigma_printing = {
-	entity = "herc_printer_printing_2_entity"
-	construction_entity = "herc_printer_printing_2_entity"
+	entity = "herc_printer_printing_3_entity"
+	construction_entity = "herc_printer_printing_3_entity"
 	portrait = "GFX_acot_precursor_colossus_base_background"
 	upgrade_from = {
 		colossus_assembler_sigma
@@ -683,8 +683,8 @@ colossus_assembler_sigma_printing = {
 
 
 colossus_assembler_phanon = { # FINISHED phanon
-	entity = "herc_printer_7_entity"
-	construction_entity = "herc_printer_7_entity"
+	entity = "herc_printer_8_entity"
+	construction_entity = "herc_printer_8_entity"
 	portrait = "GFX_acot_precursor_colossus_base_background"
 	upgrade_from = {
 		colossus_assembler_sigma
@@ -735,8 +735,8 @@ colossus_assembler_phanon = { # FINISHED phanon
 }
 
 colossus_assembler_phanon_printing = {
-	entity = "herc_printer_printing_2_entity"
-	construction_entity = "herc_printer_printing_2_entity"
+	entity = "herc_printer_printing_4_entity"
+	construction_entity = "herc_printer_printing_4_entity"
 	portrait = "GFX_acot_precursor_colossus_base_background"
 	upgrade_from = {
 		colossus_assembler_phanon
@@ -770,9 +770,9 @@ colossus_assembler_phanon_printing = {
 }
 
 
-colossus_assembler_omega = { # FINISHED phanon
-	entity = "herc_printer_7_entity"
-	construction_entity = "herc_printer_7_entity"
+colossus_assembler_omega = { # FINISHED omega
+	entity = "herc_printer_9_entity"
+	construction_entity = "herc_printer_9_entity"
 	portrait = "GFX_acot_precursor_colossus_base_background"
 	upgrade_from = {
 		colossus_assembler_sigma
@@ -824,8 +824,8 @@ colossus_assembler_omega = { # FINISHED phanon
 }
 
 colossus_assembler_omega_printing = {
-	entity = "herc_printer_printing_2_entity"
-	construction_entity = "herc_printer_printing_2_entity"
+	entity = "herc_printer_printing_5_entity"
+	construction_entity = "herc_printer_printing_5_entity"
 	portrait = "GFX_acot_precursor_colossus_base_background"
 	upgrade_from = {
 		colossus_assembler_omega
