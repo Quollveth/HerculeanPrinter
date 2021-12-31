@@ -25,19 +25,26 @@
 
 @colossus_printing_cost_alpha_alloy = 5000000
 @colossus_printing_cost_alpha_sr = 500000
-@colossus_printing_cost_alpha_time = 48000
+@colossus_printing_cost_alpha_time = 36000
 
 @colossus_printing_cost_sigma_alloy = 7500000
 @colossus_printing_cost_sigma_sr = 750000
-@colossus_printing_cost_sigma_time = 60000
+@colossus_printing_cost_sigma_time = 36000
 
 @colossus_printing_cost_phanon_alloy = 10000000
 @colossus_printing_cost_phanon_sr = 1000000
-@colossus_printing_cost_phanon_time = 72000
+@colossus_printing_cost_phanon_time = 36000
 
 @colossus_printing_cost_omega_alloy = 12500000
 @colossus_printing_cost_omega_sr = 1250000
-@colossus_printing_cost_omega_time = 84000
+@colossus_printing_cost_omega_time = 36000
+
+@colossus_printer_stage_resource_storage = 250000
+@colossus_printer_stage_resource_storage_delta = 250000
+@colossus_printer_stage_resource_storage_alpha = 500000
+@colossus_printer_stage_resource_storage_sigma = 1000000
+@colossus_printer_stage_resource_storage_phanon = 1250000
+@colossus_printer_stage_resource_storage_omega = 1500000
 
 colossus_assembler_0 = {
 	entity = "construction_platform_entity"
@@ -247,6 +254,11 @@ colossus_assembler_1 = {
 			acot_sr_dark_energy = 500
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -305,6 +317,11 @@ colossus_assembler_2 = {
 			acot_sr_dark_energy = 1000
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -349,6 +366,11 @@ colossus_assembler_3 = {
 			acot_sr_dark_energy = 1000
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -393,6 +415,11 @@ colossus_assembler_4 = {
 			acot_sr_dark_energy = 1000
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -437,6 +464,11 @@ colossus_assembler_delta = { # FINISHED DELTA
 			acot_sr_dark_energy = @colossus_printer_delta_upkeep_sr
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_delta
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -492,6 +524,10 @@ colossus_assembler_delta_printing = {
 		}
 	}
 
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_delta
+	}
+
 	on_build_complete = {
 		save_event_target_as = herc_print
 		from = {
@@ -528,6 +564,11 @@ colossus_assembler_alpha = { # FINISHED alpha
 			acot_sr_dark_energy = @colossus_printer_alpha_upkeep_sr
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_alpha
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -583,6 +624,10 @@ colossus_assembler_alpha_printing = {
 		}
 	}
 
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_alpha
+	}
+
 	on_build_complete = {
 		save_event_target_as = herc_print
 		from = {
@@ -617,6 +662,11 @@ colossus_assembler_sigma = { # FINISHED sigma
 			acot_sr_stellarite = @colossus_printer_sigma_upkeep_sr
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_sigma
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -670,6 +720,10 @@ colossus_assembler_sigma_printing = {
 		}
 	}
 
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_sigma
+	}
+
 	on_build_complete = {
 		save_event_target_as = herc_print
 		from = {
@@ -680,7 +734,6 @@ colossus_assembler_sigma_printing = {
 		}
 	}
 }
-
 
 colossus_assembler_phanon = { # FINISHED phanon
 	entity = "herc_printer_8_entity"
@@ -705,6 +758,11 @@ colossus_assembler_phanon = { # FINISHED phanon
 			aot_sr_runic_power = @colossus_printer_phanon_upkeep_sr
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_phanon
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -758,6 +816,10 @@ colossus_assembler_phanon_printing = {
 		}
 	}
 
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_phanon
+	}
+
 	on_build_complete = {
 		save_event_target_as = herc_print
 		from = {
@@ -794,6 +856,11 @@ colossus_assembler_omega = { # FINISHED omega
 			acot_sr_light_matter = @colossus_printer_omega_upkeep_sr
 		}
 	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_omega
+	}
+
 	ai_weight = {
 		factor = 10
 	}	# If we can build it, we will build it
@@ -845,6 +912,10 @@ colossus_assembler_omega_printing = {
 			energy = @colossus_printer_omega_upkeep_ec
 			acot_sr_light_matter = @colossus_printer_omega_upkeep_sr
 		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = @colossus_printer_stage_resource_storage_omega
 	}
 
 	on_build_complete = {
